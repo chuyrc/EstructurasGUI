@@ -35,6 +35,8 @@ public class PanelCS extends javax.swing.JPanel {
         mostrarBtn = new javax.swing.JLabel();
         vaciaBc = new javax.swing.JPanel();
         vaciaBtn = new javax.swing.JLabel();
+        infoBc = new javax.swing.JPanel();
+        infoBtn = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -160,6 +162,36 @@ public class PanelCS extends javax.swing.JPanel {
             .addComponent(vaciaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
+        infoBc.setBackground(new java.awt.Color(51, 51, 255));
+
+        infoBtn.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        infoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        infoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoBtn.setText("?");
+        infoBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        infoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                infoBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                infoBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                infoBtnMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout infoBcLayout = new javax.swing.GroupLayout(infoBc);
+        infoBc.setLayout(infoBcLayout);
+        infoBcLayout.setHorizontalGroup(
+            infoBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(infoBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+        );
+        infoBcLayout.setVerticalGroup(
+            infoBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(infoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -174,11 +206,17 @@ public class PanelCS extends javax.swing.JPanel {
                     .addComponent(extraerBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(vaciaBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(160, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
+                .addGap(25, 25, 25)
+                .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ingresarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(extraerBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -249,16 +287,38 @@ public class PanelCS extends javax.swing.JPanel {
 
     private void vaciaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vaciaBtnMouseClicked
         if(cola.colaVacia()){
-            JOptionPane.showMessageDialog(null,"La cola esta vacia");
+            JOptionPane.showMessageDialog(this,"La cola esta vacia");
             return;
         }
-        JOptionPane.showMessageDialog(null,"La cola no esta vacia");
+        JOptionPane.showMessageDialog(this,"La cola no esta vacia");
     }//GEN-LAST:event_vaciaBtnMouseClicked
+
+    private void infoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseClicked
+        JOptionPane.showMessageDialog(this,"COLA SIMPLE\n"
+            + "   Métodos\n"
+            + "       Ingresar dato -> Ingresa un dato a la cola\n"
+            + "       Extraer dato -> Extraer y eliminara el primer elemento de la cola\n"
+            + "       Mostrar pila -> Muestra en pantalla la cola\n"
+            + "       Cola vacia -> Muestra en pantalla si la cola esta vacia o no"
+            + " **Esta cola solo admite números enteros, cualquier otro tipo de dato no será tomado en cuenta**\n");
+    }//GEN-LAST:event_infoBtnMouseClicked
+
+    private void infoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseEntered
+        infoBc.setBackground(new Color(102,102,255));
+        infoBtn.setForeground(Color.black);
+    }//GEN-LAST:event_infoBtnMouseEntered
+
+    private void infoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseExited
+        infoBc.setBackground(new Color(51,51,255));
+        infoBtn.setForeground(Color.white);
+    }//GEN-LAST:event_infoBtnMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel extraerBc;
     private javax.swing.JLabel extraerBtn;
+    private javax.swing.JPanel infoBc;
+    private javax.swing.JLabel infoBtn;
     private javax.swing.JPanel ingresarBc;
     private javax.swing.JLabel ingresarBtn;
     private javax.swing.JPanel mostrarBc;

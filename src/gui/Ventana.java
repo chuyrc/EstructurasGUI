@@ -27,6 +27,7 @@ public class Ventana extends javax.swing.JFrame {
         initComponents();
         initPaneles();
         
+        setLocationRelativeTo(null);
         ImageIcon imagen = new ImageIcon(this.getClass().getResource("../imagenes/listaSimple.png"));
         jLabel1.setLocation(550,22);
         jLabel1.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH)));
@@ -64,14 +65,13 @@ public class Ventana extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setIconImage(getIconImage());
-        setLocationByPlatform(true);
         setUndecorated(true);
         setResizable(false);
 
         panelFondo.setBackground(new java.awt.Color(255, 255, 255));
         panelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelMennu.setBackground(new java.awt.Color(51, 51, 255));
+        panelMennu.setBackground(new java.awt.Color(0, 0, 153));
         panelMennu.setForeground(new java.awt.Color(255, 255, 255));
         panelMennu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -79,16 +79,16 @@ public class Ventana extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Menú");
         jLabel2.setToolTipText("");
-        panelMennu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 51, -1, -1));
+        panelMennu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
         jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        panelMennu.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 100, 204, 10));
+        panelMennu.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 204, 10));
 
-        listaSimpleBc.setBackground(new java.awt.Color(153, 153, 255));
+        listaSimpleBc.setBackground(new java.awt.Color(0, 0, 255));
 
-        listaSimpleBtn.setBackground(new java.awt.Color(153, 153, 255));
+        listaSimpleBtn.setBackground(new java.awt.Color(0, 0, 153));
         listaSimpleBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
         listaSimpleBtn.setForeground(new java.awt.Color(255, 255, 255));
         listaSimpleBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -117,13 +117,13 @@ public class Ventana extends javax.swing.JFrame {
         listaSimpleBcLayout.setVerticalGroup(
             listaSimpleBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(listaSimpleBcLayout.createSequentialGroup()
-                .addComponent(listaSimpleBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(listaSimpleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(listaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 290, 60));
+        panelMennu.add(listaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 290, 50));
 
-        pilaSimpleBc.setBackground(new java.awt.Color(153, 153, 255));
+        pilaSimpleBc.setBackground(new java.awt.Color(0, 0, 255));
 
         pilaSimpleBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
         pilaSimpleBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,13 +150,16 @@ public class Ventana extends javax.swing.JFrame {
         );
         pilaSimpleBcLayout.setVerticalGroup(
             pilaSimpleBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pilaSimpleBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addGroup(pilaSimpleBcLayout.createSequentialGroup()
+                .addComponent(pilaSimpleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(pilaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 290, 60));
+        panelMennu.add(pilaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 290, 50));
 
-        colaSimpleBc.setBackground(new java.awt.Color(153, 153, 255));
+        colaSimpleBc.setBackground(new java.awt.Color(0, 0, 255));
 
+        colaSimpleBtn.setBackground(new java.awt.Color(0, 0, 255));
         colaSimpleBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
         colaSimpleBtn.setForeground(new java.awt.Color(255, 255, 255));
         colaSimpleBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -183,13 +186,13 @@ public class Ventana extends javax.swing.JFrame {
         colaSimpleBcLayout.setVerticalGroup(
             colaSimpleBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(colaSimpleBcLayout.createSequentialGroup()
-                .addComponent(colaSimpleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(colaSimpleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(colaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 290, -1));
+        panelMennu.add(colaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 290, 50));
 
-        listaBc.setBackground(new java.awt.Color(153, 153, 255));
+        listaBc.setBackground(new java.awt.Color(0, 0, 255));
 
         listaBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
         listaBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -219,13 +222,13 @@ public class Ventana extends javax.swing.JFrame {
         listaBcLayout.setVerticalGroup(
             listaBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(listaBcLayout.createSequentialGroup()
-                .addComponent(listaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(listaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(listaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, -1, 60));
+        panelMennu.add(listaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, 50));
 
-        pilaBc.setBackground(new java.awt.Color(153, 153, 255));
+        pilaBc.setBackground(new java.awt.Color(0, 0, 255));
 
         pilaBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
         pilaBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,13 +256,13 @@ public class Ventana extends javax.swing.JFrame {
         pilaBcLayout.setVerticalGroup(
             pilaBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pilaBcLayout.createSequentialGroup()
-                .addComponent(pilaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pilaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(pilaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 290, 60));
+        panelMennu.add(pilaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 290, 50));
 
-        colaBc.setBackground(new java.awt.Color(153, 153, 255));
+        colaBc.setBackground(new java.awt.Color(0, 0, 255));
 
         colaBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
         colaBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -286,16 +289,16 @@ public class Ventana extends javax.swing.JFrame {
         );
         colaBcLayout.setVerticalGroup(
             colaBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colaBcLayout.createSequentialGroup()
-                .addComponent(colaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(colaBcLayout.createSequentialGroup()
+                .addComponent(colaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(colaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 290, 60));
+        panelMennu.add(colaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 290, 50));
 
         panelFondo.add(panelMennu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 630));
 
-        panelTitulo.setBackground(new java.awt.Color(102, 102, 255));
+        panelTitulo.setBackground(new java.awt.Color(0, 0, 204));
         panelTitulo.setLayout(null);
 
         tituloTxt.setFont(new java.awt.Font("Roboto Light", 1, 48)); // NOI18N
@@ -303,6 +306,8 @@ public class Ventana extends javax.swing.JFrame {
         tituloTxt.setText("Lista simple");
         panelTitulo.add(tituloTxt);
         tituloTxt.setBounds(90, 40, 430, 57);
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 255));
         panelTitulo.add(jLabel1);
         jLabel1.setBounds(540, 20, 180, 90);
 
@@ -443,22 +448,22 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxtMouseExited
 
     private void listaSimpleBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaSimpleBtnMouseEntered
-        listaSimpleBc.setBackground(new Color(204,204,255));
+        listaSimpleBc.setBackground(new Color(102,102,255));
         listaSimpleBtn.setForeground(Color.black);
     }//GEN-LAST:event_listaSimpleBtnMouseEntered
 
     private void listaSimpleBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaSimpleBtnMouseExited
-        listaSimpleBc.setBackground(new Color(153,153,255));
+        listaSimpleBc.setBackground(new Color(0,0,255));
         listaSimpleBtn.setForeground(Color.white);
     }//GEN-LAST:event_listaSimpleBtnMouseExited
 
     private void pilaSimpleBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pilaSimpleBtnMouseEntered
-        pilaSimpleBc.setBackground(new Color(204,204,255));
+        pilaSimpleBc.setBackground(new Color(102,102,255));
         pilaSimpleBtn.setForeground(Color.black);
     }//GEN-LAST:event_pilaSimpleBtnMouseEntered
 
     private void pilaSimpleBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pilaSimpleBtnMouseExited
-        pilaSimpleBc.setBackground(new Color(153,153,255));
+        pilaSimpleBc.setBackground(new Color(0,0,255));
         pilaSimpleBtn.setForeground(Color.white);
     }//GEN-LAST:event_pilaSimpleBtnMouseExited
 /////////////////////////////////////////////////////////////////////////////777
@@ -488,12 +493,12 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_pilaSimpleBtnMouseClicked
 
     private void colaSimpleBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colaSimpleBtnMouseExited
-        colaSimpleBc.setBackground(new Color(153,153,255));
+        colaSimpleBc.setBackground(new Color(0,0,255));
         colaSimpleBtn.setForeground(Color.white);
     }//GEN-LAST:event_colaSimpleBtnMouseExited
 
     private void colaSimpleBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colaSimpleBtnMouseEntered
-        colaSimpleBc.setBackground(new Color(204,204,255));
+        colaSimpleBc.setBackground(new Color(102,102,255));
         colaSimpleBtn.setForeground(Color.black);
     }//GEN-LAST:event_colaSimpleBtnMouseEntered
 
@@ -509,32 +514,32 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_colaSimpleBtnMouseClicked
 
     private void listaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaBtnMouseEntered
-        listaBc.setBackground(new Color(204,204,255));
+        listaBc.setBackground(new Color(102,102,255));
         listaBtn.setForeground(Color.black);
     }//GEN-LAST:event_listaBtnMouseEntered
 
     private void listaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaBtnMouseExited
-        listaBc.setBackground(new Color(153,153,255));
+        listaBc.setBackground(new Color(0,0,255));
         listaBtn.setForeground(Color.white);
     }//GEN-LAST:event_listaBtnMouseExited
 
     private void pilaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pilaBtnMouseEntered
-        pilaBc.setBackground(new Color(204,204,255));
+        pilaBc.setBackground(new Color(102,102,255));
         pilaBtn.setForeground(Color.black);
     }//GEN-LAST:event_pilaBtnMouseEntered
 
     private void pilaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pilaBtnMouseExited
-        pilaBc.setBackground(new Color(153,153,255));
+        pilaBc.setBackground(new Color(0,0,255));
         pilaBtn.setForeground(Color.white);
     }//GEN-LAST:event_pilaBtnMouseExited
 
     private void colaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colaBtnMouseEntered
-        colaBc.setBackground(new Color(204,204,255));
+        colaBc.setBackground(new Color(102,102,255));
         colaBtn.setForeground(Color.black);
     }//GEN-LAST:event_colaBtnMouseEntered
 
     private void colaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colaBtnMouseExited
-        colaBc.setBackground(new Color(153,153,255));
+        colaBc.setBackground(new Color(0,0,255));
         colaBtn.setForeground(Color.white);
     }//GEN-LAST:event_colaBtnMouseExited
 

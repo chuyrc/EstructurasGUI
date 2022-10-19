@@ -160,6 +160,13 @@ public class ListaSimple {
             JOptionPane.showMessageDialog(null,"La lista esta vacia");
         }
     }
+    
+    public void vaciarLista() {
+        if(!listaVacia()) {
+            primero = null;
+            ultimo = null;
+        }          
+    }
 
     //  Verifica que la lista no este vacia
     public boolean listaVacia() {

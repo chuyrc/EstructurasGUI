@@ -39,6 +39,8 @@ public class PanelLS extends javax.swing.JPanel {
         verListaBtn = new javax.swing.JLabel();
         listaVaciaBc = new javax.swing.JPanel();
         listaVaciaBtn = new javax.swing.JLabel();
+        infoBc = new javax.swing.JPanel();
+        infoBtn = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -226,6 +228,36 @@ public class PanelLS extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        infoBc.setBackground(new java.awt.Color(51, 51, 255));
+
+        infoBtn.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        infoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        infoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoBtn.setText("?");
+        infoBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        infoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                infoBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                infoBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                infoBtnMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout infoBcLayout = new javax.swing.GroupLayout(infoBc);
+        infoBc.setLayout(infoBcLayout);
+        infoBcLayout.setHorizontalGroup(
+            infoBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(infoBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+        );
+        infoBcLayout.setVerticalGroup(
+            infoBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(infoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -242,11 +274,17 @@ public class PanelLS extends javax.swing.JPanel {
                     .addComponent(eliminarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(listaVaciaBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(169, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(23, 23, 23)
+                .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ingresarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(buscarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -258,7 +296,7 @@ public class PanelLS extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(verListaBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(listaVaciaBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -366,12 +404,36 @@ public class PanelLS extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this,"La lista no esta vacia");
     }//GEN-LAST:event_listaVaciaBtnMouseClicked
 
+    private void infoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseEntered
+        infoBc.setBackground(new Color(102,102,255));
+        infoBtn.setForeground(Color.black);
+    }//GEN-LAST:event_infoBtnMouseEntered
+
+    private void infoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseExited
+        infoBc.setBackground(new Color(51,51,255));
+        infoBtn.setForeground(Color.white);
+    }//GEN-LAST:event_infoBtnMouseExited
+
+    private void infoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseClicked
+        JOptionPane.showMessageDialog(this,"LISTA ENLAZADA SIMPLE\n"
+          + "   Métodos\n"
+          + "       Ingresar dato -> Ingresa un dato a la lista\n"
+          + "       Buscar dato -> Busca un número dentro de la lista\n"
+          + "       Modificar dato -> Modifica un dato de la lista, si esta en ella\n"
+          + "       Eliminar dato -> Elimina un dato de la lista, si esta en ella\n"
+          + "       Ver lista -> Muestra en pantalla la lista\n"
+          + "       Esta vacia -> Muestra en pantalla si la lista esta vacia o no\n"
+          + " **Esta lista solo admite números enteros, cualquier otro tipo de dato no será tomado en cuenta**\n");
+    }//GEN-LAST:event_infoBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel buscarBc;
     private javax.swing.JLabel buscarBtn;
     private javax.swing.JPanel eliminarBc;
     private javax.swing.JLabel eliminarBtn;
+    private javax.swing.JPanel infoBc;
+    private javax.swing.JLabel infoBtn;
     private javax.swing.JPanel ingresarBc;
     private javax.swing.JLabel ingresarBtn;
     private javax.swing.JPanel listaVaciaBc;
