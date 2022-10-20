@@ -1,11 +1,14 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ *
+    https://github.com/chuyrc/EstructurasGUI.git
  */
 package gui;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 /**
@@ -22,15 +25,28 @@ public class Ventana extends javax.swing.JFrame {
     PanelPS panelPs;
     PanelCS panelCs;
     PanelLP panelLp;
+    PanelPP panelPp;
+    PanelCP panelCp;
     
-    public Ventana() {
+    public Ventana() {       
         initComponents();
+        setIconImage(getIconImage());
         initPaneles();
         
         setLocationRelativeTo(null);
         ImageIcon imagen = new ImageIcon(this.getClass().getResource("../imagenes/listaSimple.png"));
         jLabel1.setLocation(550,22);
         jLabel1.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH)));
+        setIconImage(getIconImage());
+    }
+    
+    
+    //  Icono del JFrame
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/icono.png"));
+        
+        return retValue;
     }
     
     @SuppressWarnings("unchecked")
@@ -38,7 +54,7 @@ public class Ventana extends javax.swing.JFrame {
     private void initComponents() {
 
         panelFondo = new javax.swing.JPanel();
-        panelMennu = new javax.swing.JPanel();
+        panelMenu = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         listaSimpleBc = new javax.swing.JPanel();
@@ -68,23 +84,23 @@ public class Ventana extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
-        panelFondo.setBackground(new java.awt.Color(255, 255, 255));
+        panelFondo.setBackground(new java.awt.Color(240, 240, 255));
         panelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelMennu.setBackground(new java.awt.Color(0, 0, 153));
-        panelMennu.setForeground(new java.awt.Color(255, 255, 255));
-        panelMennu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelMenu.setBackground(new java.awt.Color(16, 19, 153));
+        panelMenu.setForeground(new java.awt.Color(255, 255, 255));
+        panelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Menú");
         jLabel2.setToolTipText("");
-        panelMennu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
+        panelMenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
         jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        panelMennu.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 204, 10));
+        panelMenu.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 204, 10));
 
         listaSimpleBc.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -121,7 +137,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(listaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 290, 50));
+        panelMenu.add(listaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 290, 50));
 
         pilaSimpleBc.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -155,7 +171,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(pilaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 290, 50));
+        panelMenu.add(pilaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 290, 50));
 
         colaSimpleBc.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -190,7 +206,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(colaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 290, 50));
+        panelMenu.add(colaSimpleBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 290, 50));
 
         listaBc.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -226,7 +242,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(listaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, 50));
+        panelMenu.add(listaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, 50));
 
         pilaBc.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -260,7 +276,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(pilaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 290, 50));
+        panelMenu.add(pilaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 290, 50));
 
         colaBc.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -294,9 +310,9 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        panelMennu.add(colaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 290, 50));
+        panelMenu.add(colaBc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 290, 50));
 
-        panelFondo.add(panelMennu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 630));
+        panelFondo.add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 630));
 
         panelTitulo.setBackground(new java.awt.Color(0, 0, 204));
         panelTitulo.setLayout(null);
@@ -318,7 +334,7 @@ public class Ventana extends javax.swing.JFrame {
         titulo.setText("Estructuras de datos");
         panelFondo.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 200, 20));
 
-        cabecera.setBackground(new java.awt.Color(255, 255, 255));
+        cabecera.setBackground(new java.awt.Color(240, 240, 255));
         cabecera.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 cabeceraMouseDragged(evt);
@@ -330,7 +346,7 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        exitBtn.setBackground(new java.awt.Color(255, 255, 255));
+        exitBtn.setBackground(new java.awt.Color(240, 240, 255));
 
         exitTxt.setBackground(new java.awt.Color(255, 255, 255));
         exitTxt.setFont(new java.awt.Font("Roboto Thin", 0, 24)); // NOI18N
@@ -401,16 +417,22 @@ public class Ventana extends javax.swing.JFrame {
         panelPs = new PanelPS();
         panelCs = new PanelCS();
         panelLp = new PanelLP();
+        panelPp = new PanelPP();
+        panelCp = new PanelCP();
     
         panelLs.setSize(810,420);
         panelPs.setSize(810,420);
         panelCs.setSize(810,420);
         panelLp.setSize(810,420);
+        panelPp.setSize(810,420);
+        panelCp.setSize(810,420);
         
         panelContenido.add(panelLs);
         panelContenido.add(panelPs);
         panelContenido.add(panelCs);
         panelContenido.add(panelLp);
+        panelContenido.add(panelPp);
+        panelContenido.add(panelCp);
         panelContenido.setVisible(true);
         panelContenido.setLayout(null);
         
@@ -418,6 +440,8 @@ public class Ventana extends javax.swing.JFrame {
         panelPs.setVisible(false);
         panelCs.setVisible(false);
         panelLp.setVisible(false);
+        panelPp.setVisible(false);
+        panelCp.setVisible(false);
         
         
     }
@@ -443,7 +467,7 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxtMouseEntered
 
     private void exitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseExited
-        exitBtn.setBackground(Color.white);
+        exitBtn.setBackground(new Color(240,240,255));
         exitTxt.setForeground(Color.black);
     }//GEN-LAST:event_exitTxtMouseExited
 
@@ -475,6 +499,8 @@ public class Ventana extends javax.swing.JFrame {
         panelPs.setVisible(false);
         panelCs.setVisible(false);
         panelLp.setVisible(false);
+        panelPp.setVisible(false);
+        panelCp.setVisible(false);
         ImageIcon imagen = new ImageIcon(this.getClass().getResource("../imagenes/listaSimple.png"));
         jLabel1.setLocation(550,22);
         jLabel1.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH)));
@@ -486,6 +512,8 @@ public class Ventana extends javax.swing.JFrame {
         panelPs.setVisible(true);
         panelCs.setVisible(false);
         panelLp.setVisible(false);
+        panelPp.setVisible(false);
+        panelCp.setVisible(false);
         ImageIcon imagen = new ImageIcon(this.getClass().getResource("../imagenes/pila.png"));
         jLabel1.setLocation(550,22);
         jLabel1.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH)));
@@ -508,6 +536,8 @@ public class Ventana extends javax.swing.JFrame {
         panelPs.setVisible(false);
         panelCs.setVisible(true);
         panelLp.setVisible(false);
+        panelPp.setVisible(false);
+        panelCp.setVisible(false);
         ImageIcon imagen = new ImageIcon(this.getClass().getResource("../imagenes/cola.png"));
         jLabel1.setLocation(550,22);
         jLabel1.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH)));
@@ -549,6 +579,8 @@ public class Ventana extends javax.swing.JFrame {
         panelPs.setVisible(false);
         panelCs.setVisible(false);
         panelLp.setVisible(true);
+        panelPp.setVisible(false);
+        panelCp.setVisible(false);
         ImageIcon imagen = new ImageIcon(this.getClass().getResource("../imagenes/lista2.png"));
         jLabel1.setLocation(550,22);
         jLabel1.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH)));
@@ -560,6 +592,8 @@ public class Ventana extends javax.swing.JFrame {
         panelPs.setVisible(false);
         panelCs.setVisible(false);
         panelLp.setVisible(false);
+        panelPp.setVisible(true);
+        panelCp.setVisible(false);
         ImageIcon imagen = new ImageIcon(this.getClass().getResource("../imagenes/pila2.png"));
         jLabel1.setLocation(550,22);
         jLabel1.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH)));
@@ -571,6 +605,8 @@ public class Ventana extends javax.swing.JFrame {
         panelPs.setVisible(false);
         panelCs.setVisible(false);
         panelLp.setVisible(false);
+        panelPp.setVisible(false);
+        panelCp.setVisible(true);
         ImageIcon imagen = new ImageIcon(this.getClass().getResource("../imagenes/cola2.png"));
         jLabel1.setLocation(550,22);
         jLabel1.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH)));
@@ -628,7 +664,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel listaSimpleBtn;
     private javax.swing.JPanel panelContenido;
     private javax.swing.JPanel panelFondo;
-    private javax.swing.JPanel panelMennu;
+    private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel panelTitulo;
     private javax.swing.JPanel pilaBc;
     private javax.swing.JLabel pilaBtn;

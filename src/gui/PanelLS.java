@@ -1,6 +1,8 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ *
+    https://github.com/chuyrc/EstructurasGUI.git
  */
 package gui;
 
@@ -37,12 +39,12 @@ public class PanelLS extends javax.swing.JPanel {
         eliminarBtn = new javax.swing.JLabel();
         verListaBc = new javax.swing.JPanel();
         verListaBtn = new javax.swing.JLabel();
-        listaVaciaBc = new javax.swing.JPanel();
-        listaVaciaBtn = new javax.swing.JLabel();
+        vaciarBc = new javax.swing.JPanel();
+        vaciarBtn = new javax.swing.JLabel();
         infoBc = new javax.swing.JPanel();
         infoBtn = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(240, 240, 255));
 
         ingresarBc.setBackground(new java.awt.Color(51, 51, 255));
 
@@ -196,35 +198,35 @@ public class PanelLS extends javax.swing.JPanel {
             .addComponent(verListaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        listaVaciaBc.setBackground(new java.awt.Color(51, 51, 255));
+        vaciarBc.setBackground(new java.awt.Color(51, 51, 255));
 
-        listaVaciaBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
-        listaVaciaBtn.setForeground(new java.awt.Color(255, 255, 255));
-        listaVaciaBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        listaVaciaBtn.setText("Esta vacia");
-        listaVaciaBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        listaVaciaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        vaciarBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
+        vaciarBtn.setForeground(new java.awt.Color(255, 255, 255));
+        vaciarBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        vaciarBtn.setText("Vaciar lista");
+        vaciarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        vaciarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                listaVaciaBtnMouseClicked(evt);
+                vaciarBtnMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                listaVaciaBtnMouseEntered(evt);
+                vaciarBtnMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                listaVaciaBtnMouseExited(evt);
+                vaciarBtnMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout listaVaciaBcLayout = new javax.swing.GroupLayout(listaVaciaBc);
-        listaVaciaBc.setLayout(listaVaciaBcLayout);
-        listaVaciaBcLayout.setHorizontalGroup(
-            listaVaciaBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(listaVaciaBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+        javax.swing.GroupLayout vaciarBcLayout = new javax.swing.GroupLayout(vaciarBc);
+        vaciarBc.setLayout(vaciarBcLayout);
+        vaciarBcLayout.setHorizontalGroup(
+            vaciarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(vaciarBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
-        listaVaciaBcLayout.setVerticalGroup(
-            listaVaciaBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(listaVaciaBcLayout.createSequentialGroup()
-                .addComponent(listaVaciaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+        vaciarBcLayout.setVerticalGroup(
+            vaciarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vaciarBcLayout.createSequentialGroup()
+                .addComponent(vaciarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -263,28 +265,29 @@ public class PanelLS extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(verListaBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(modificarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ingresarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(99, 99, 99)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buscarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(eliminarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(listaVaciaBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(169, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                .addContainerGap(159, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(verListaBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(modificarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ingresarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(99, 99, 99)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(buscarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(eliminarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(vaciarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(152, 152, 152))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(27, 27, 27)
                 .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ingresarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(buscarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -295,8 +298,8 @@ public class PanelLS extends javax.swing.JPanel {
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(verListaBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(listaVaciaBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(83, Short.MAX_VALUE))
+                    .addComponent(vaciarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -350,15 +353,15 @@ public class PanelLS extends javax.swing.JPanel {
         verListaBtn.setForeground(Color.white);
     }//GEN-LAST:event_verListaBtnMouseExited
 
-    private void listaVaciaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVaciaBtnMouseEntered
-        listaVaciaBc.setBackground(new Color(102,102,255));
-        listaVaciaBtn.setForeground(Color.black);
-    }//GEN-LAST:event_listaVaciaBtnMouseEntered
+    private void vaciarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vaciarBtnMouseEntered
+        vaciarBc.setBackground(new Color(102,102,255));
+        vaciarBtn.setForeground(Color.black);
+    }//GEN-LAST:event_vaciarBtnMouseEntered
 
-    private void listaVaciaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVaciaBtnMouseExited
-        listaVaciaBc.setBackground(new Color(51,51,255));
-        listaVaciaBtn.setForeground(Color.white);
-    }//GEN-LAST:event_listaVaciaBtnMouseExited
+    private void vaciarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vaciarBtnMouseExited
+        vaciarBc.setBackground(new Color(51,51,255));
+        vaciarBtn.setForeground(Color.white);
+    }//GEN-LAST:event_vaciarBtnMouseExited
 
     private void ingresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarBtnMouseClicked
         try {
@@ -396,13 +399,10 @@ public class PanelLS extends javax.swing.JPanel {
         lista.verLista();
     }//GEN-LAST:event_verListaBtnMouseClicked
 
-    private void listaVaciaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVaciaBtnMouseClicked
-        if(lista.listaVacia()) {
-            JOptionPane.showMessageDialog(this,"La lista esta vacia");
-            return;
-        }
-        JOptionPane.showMessageDialog(this,"La lista no esta vacia");
-    }//GEN-LAST:event_listaVaciaBtnMouseClicked
+    private void vaciarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vaciarBtnMouseClicked
+        lista.vaciarLista();
+        JOptionPane.showMessageDialog(this,"Se ha limpiado la lista");
+    }//GEN-LAST:event_vaciarBtnMouseClicked
 
     private void infoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseEntered
         infoBc.setBackground(new Color(102,102,255));
@@ -436,10 +436,10 @@ public class PanelLS extends javax.swing.JPanel {
     private javax.swing.JLabel infoBtn;
     private javax.swing.JPanel ingresarBc;
     private javax.swing.JLabel ingresarBtn;
-    private javax.swing.JPanel listaVaciaBc;
-    private javax.swing.JLabel listaVaciaBtn;
     private javax.swing.JPanel modificarBc;
     private javax.swing.JLabel modificarBtn;
+    private javax.swing.JPanel vaciarBc;
+    private javax.swing.JLabel vaciarBtn;
     private javax.swing.JPanel verListaBc;
     private javax.swing.JLabel verListaBtn;
     // End of variables declaration//GEN-END:variables

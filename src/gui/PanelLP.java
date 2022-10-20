@@ -1,6 +1,8 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ *
+    https://github.com/chuyrc/EstructurasGUI.git
  */
 package gui;
 
@@ -44,7 +46,7 @@ public class PanelLP extends javax.swing.JPanel {
         infoBc = new javax.swing.JPanel();
         infoBtn = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(240, 240, 255));
 
         ingresarBc.setBackground(new java.awt.Color(51, 51, 255));
 
@@ -293,47 +295,48 @@ public class PanelLP extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(303, 303, 303)
-                .addComponent(limpiarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(307, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(verListaBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(posicionBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ingresarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(99, 99, 99)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(buscarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(eliminarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tamanoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(151, 151, 151))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(verListaBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(posicionBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ingresarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(99, 99, 99)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buscarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(eliminarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tamanoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addGap(302, 302, 302)
+                .addComponent(limpiarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ingresarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buscarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ingresarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buscarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(posicionBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eliminarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(verListaBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tamanoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                        .addComponent(eliminarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(verListaBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tamanoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(posicionBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(limpiarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -376,26 +379,6 @@ public class PanelLP extends javax.swing.JPanel {
         eliminarBc.setBackground(new Color(51,51,255));
         eliminarBtn.setForeground(Color.white);
     }//GEN-LAST:event_eliminarBtnMouseExited
-
-    private void verListaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verListaBtnMouseEntered
-        verListaBc.setBackground(new Color(102,102,255));
-        verListaBtn.setForeground(Color.black);
-    }//GEN-LAST:event_verListaBtnMouseEntered
-
-    private void verListaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verListaBtnMouseExited
-        verListaBc.setBackground(new Color(51,51,255));
-        verListaBtn.setForeground(Color.white);
-    }//GEN-LAST:event_verListaBtnMouseExited
-
-    private void tamanoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tamanoBtnMouseEntered
-        tamanoBc.setBackground(new Color(102,102,255));
-        tamanoBtn.setForeground(Color.black);
-    }//GEN-LAST:event_tamanoBtnMouseEntered
-
-    private void tamanoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tamanoBtnMouseExited
-        tamanoBc.setBackground(new Color(51,51,255));
-        tamanoBtn.setForeground(Color.white);
-    }//GEN-LAST:event_tamanoBtnMouseExited
 
     private void ingresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarBtnMouseClicked
         try {
@@ -463,46 +446,8 @@ public class PanelLP extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_eliminarBtnMouseClicked
 
-    private void verListaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verListaBtnMouseClicked
-        if(lista.isEmpty()) {
-            JOptionPane.showMessageDialog(this,"La lista esta vacia");
-            return;
-        }
-        String lista = "";
-        int i = 0;
-        
-        for(int datos : this.lista) {
-            lista += " " + i + " - " + datos + "\n";
-            i++;
-        }
-        JOptionPane.showMessageDialog(null,"Lista\n" + lista);       
-    }//GEN-LAST:event_verListaBtnMouseClicked
-
-    private void tamanoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tamanoBtnMouseClicked
-        if(!lista.isEmpty()) {
-            JOptionPane.showMessageDialog(this,"Tamaño de la lista " + lista.size());
-            return;
-        }
-        JOptionPane.showMessageDialog(this,"La lista esta vacia");
-    }//GEN-LAST:event_tamanoBtnMouseClicked
-
-    private void limpiarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarBtnMouseEntered
-        limpiarBc.setBackground(new Color(102,102,255));
-        limpiarBtn.setForeground(Color.black);
-    }//GEN-LAST:event_limpiarBtnMouseEntered
-
-    private void limpiarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarBtnMouseExited
-        limpiarBc.setBackground(new Color(51,51,255));
-        limpiarBtn.setForeground(Color.white);
-    }//GEN-LAST:event_limpiarBtnMouseExited
-
-    private void limpiarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarBtnMouseClicked
-        lista.clear();
-        JOptionPane.showMessageDialog(this,"Se ha limpiado la lista");
-    }//GEN-LAST:event_limpiarBtnMouseClicked
-
     private void infoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseClicked
-        JOptionPane.showMessageDialog(this,"ARRAYLIST\n"
+        JOptionPane.showMessageDialog(this,"ARRAYLIST (lista)\n"
             + "   Métodos\n"
             + "       Ingresar dato -> Ingresa un dato al ArrayList\n"
             + "       Obtener posición -> Muestra la posición de un elemento\n"
@@ -523,6 +468,64 @@ public class PanelLP extends javax.swing.JPanel {
         infoBc.setBackground(new Color(51,51,255));
         infoBtn.setForeground(Color.white);
     }//GEN-LAST:event_infoBtnMouseExited
+
+    private void limpiarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarBtnMouseExited
+        limpiarBc.setBackground(new Color(51,51,255));
+        limpiarBtn.setForeground(Color.white);
+    }//GEN-LAST:event_limpiarBtnMouseExited
+
+    private void limpiarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarBtnMouseEntered
+        limpiarBc.setBackground(new Color(102,102,255));
+        limpiarBtn.setForeground(Color.black);
+    }//GEN-LAST:event_limpiarBtnMouseEntered
+
+    private void limpiarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarBtnMouseClicked
+        lista.clear();
+        JOptionPane.showMessageDialog(this,"Se ha limpiado la lista");
+    }//GEN-LAST:event_limpiarBtnMouseClicked
+
+    private void verListaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verListaBtnMouseExited
+        verListaBc.setBackground(new Color(51,51,255));
+        verListaBtn.setForeground(Color.white);
+    }//GEN-LAST:event_verListaBtnMouseExited
+
+    private void verListaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verListaBtnMouseEntered
+        verListaBc.setBackground(new Color(102,102,255));
+        verListaBtn.setForeground(Color.black);
+    }//GEN-LAST:event_verListaBtnMouseEntered
+
+    private void verListaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verListaBtnMouseClicked
+        if(lista.isEmpty()) {
+            JOptionPane.showMessageDialog(this,"La lista esta vacia");
+            return;
+        }
+        String lista = "";
+        int i = 0;
+
+        for(int datos : this.lista) {
+            lista += " " + i + " - " + datos + "\n";
+            i++;
+        }
+        JOptionPane.showMessageDialog(null,"Lista\n" + lista);
+    }//GEN-LAST:event_verListaBtnMouseClicked
+
+    private void tamanoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tamanoBtnMouseExited
+        tamanoBc.setBackground(new Color(51,51,255));
+        tamanoBtn.setForeground(Color.white);
+    }//GEN-LAST:event_tamanoBtnMouseExited
+
+    private void tamanoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tamanoBtnMouseEntered
+        tamanoBc.setBackground(new Color(102,102,255));
+        tamanoBtn.setForeground(Color.black);
+    }//GEN-LAST:event_tamanoBtnMouseEntered
+
+    private void tamanoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tamanoBtnMouseClicked
+        if(!lista.isEmpty()) {
+            JOptionPane.showMessageDialog(this,"Tamaño de la lista " + lista.size());
+            return;
+        }
+        JOptionPane.showMessageDialog(this,"La lista esta vacia");
+    }//GEN-LAST:event_tamanoBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -6,19 +6,19 @@
  */
 package gui;
 
-import estructuras.Pila;
 import java.awt.Color;
+import java.util.Stack;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author chuy
  */
-public class PanelPS extends javax.swing.JPanel {
+public class PanelPP extends javax.swing.JPanel {
 
-    Pila pila = new Pila();
+    Stack<Integer> pila = new Stack();
     
-    public PanelPS() {
+    public PanelPP() {
         initComponents();
     }
 
@@ -35,14 +35,14 @@ public class PanelPS extends javax.swing.JPanel {
         extraerBtn = new javax.swing.JLabel();
         topeBc = new javax.swing.JPanel();
         topeBtn = new javax.swing.JLabel();
-        tamanoBc = new javax.swing.JPanel();
-        tamanoBtn = new javax.swing.JLabel();
-        vaciarBc = new javax.swing.JPanel();
-        vaciarBtn = new javax.swing.JLabel();
-        mostrarBc = new javax.swing.JPanel();
-        mostrarBtn = new javax.swing.JLabel();
+        buscarBc = new javax.swing.JPanel();
+        buscarBtn = new javax.swing.JLabel();
+        limpiarBc = new javax.swing.JPanel();
+        limpiarBtn = new javax.swing.JLabel();
         infoBc = new javax.swing.JPanel();
         infoBtn = new javax.swing.JLabel();
+        mostrarBc = new javax.swing.JPanel();
+        mostrarBtn = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(240, 240, 255));
 
@@ -113,7 +113,7 @@ public class PanelPS extends javax.swing.JPanel {
         topeBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
         topeBtn.setForeground(new java.awt.Color(255, 255, 255));
         topeBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        topeBtn.setText("Mostrar Tope");
+        topeBtn.setText("Mostrar tope");
         topeBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         topeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -135,99 +135,67 @@ public class PanelPS extends javax.swing.JPanel {
         );
         topeBcLayout.setVerticalGroup(
             topeBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(topeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(topeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        tamanoBc.setBackground(new java.awt.Color(51, 51, 255));
+        buscarBc.setBackground(new java.awt.Color(51, 51, 255));
 
-        tamanoBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
-        tamanoBtn.setForeground(new java.awt.Color(255, 255, 255));
-        tamanoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tamanoBtn.setText("Tamaño");
-        tamanoBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        tamanoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        buscarBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
+        buscarBtn.setForeground(new java.awt.Color(255, 255, 255));
+        buscarBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buscarBtn.setText("Buscar dato");
+        buscarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buscarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tamanoBtnMouseClicked(evt);
+                buscarBtnMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tamanoBtnMouseEntered(evt);
+                buscarBtnMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                tamanoBtnMouseExited(evt);
+                buscarBtnMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout tamanoBcLayout = new javax.swing.GroupLayout(tamanoBc);
-        tamanoBc.setLayout(tamanoBcLayout);
-        tamanoBcLayout.setHorizontalGroup(
-            tamanoBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tamanoBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout buscarBcLayout = new javax.swing.GroupLayout(buscarBc);
+        buscarBc.setLayout(buscarBcLayout);
+        buscarBcLayout.setHorizontalGroup(
+            buscarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(buscarBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
-        tamanoBcLayout.setVerticalGroup(
-            tamanoBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tamanoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        buscarBcLayout.setVerticalGroup(
+            buscarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(buscarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        vaciarBc.setBackground(new java.awt.Color(51, 51, 255));
+        limpiarBc.setBackground(new java.awt.Color(51, 51, 255));
 
-        vaciarBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
-        vaciarBtn.setForeground(new java.awt.Color(255, 255, 255));
-        vaciarBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vaciarBtn.setText("Vaciar pila");
-        vaciarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        vaciarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        limpiarBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
+        limpiarBtn.setForeground(new java.awt.Color(255, 255, 255));
+        limpiarBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        limpiarBtn.setText("Limpiar pila");
+        limpiarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        limpiarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vaciarBtnMouseClicked(evt);
+                limpiarBtnMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                vaciarBtnMouseEntered(evt);
+                limpiarBtnMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                vaciarBtnMouseExited(evt);
+                limpiarBtnMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout vaciarBcLayout = new javax.swing.GroupLayout(vaciarBc);
-        vaciarBc.setLayout(vaciarBcLayout);
-        vaciarBcLayout.setHorizontalGroup(
-            vaciarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(vaciarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout limpiarBcLayout = new javax.swing.GroupLayout(limpiarBc);
+        limpiarBc.setLayout(limpiarBcLayout);
+        limpiarBcLayout.setHorizontalGroup(
+            limpiarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(limpiarBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
-        vaciarBcLayout.setVerticalGroup(
-            vaciarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(vaciarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        mostrarBc.setBackground(new java.awt.Color(51, 51, 255));
-
-        mostrarBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
-        mostrarBtn.setForeground(new java.awt.Color(255, 255, 255));
-        mostrarBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mostrarBtn.setText("Mostrar pila");
-        mostrarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mostrarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mostrarBtnMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                mostrarBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                mostrarBtnMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout mostrarBcLayout = new javax.swing.GroupLayout(mostrarBc);
-        mostrarBc.setLayout(mostrarBcLayout);
-        mostrarBcLayout.setHorizontalGroup(
-            mostrarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mostrarBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-        );
-        mostrarBcLayout.setVerticalGroup(
-            mostrarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mostrarBcLayout.createSequentialGroup()
-                .addComponent(mostrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        limpiarBcLayout.setVerticalGroup(
+            limpiarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(limpiarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         infoBc.setBackground(new java.awt.Color(51, 51, 255));
@@ -260,27 +228,59 @@ public class PanelPS extends javax.swing.JPanel {
             .addComponent(infoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        mostrarBc.setBackground(new java.awt.Color(51, 51, 255));
+
+        mostrarBtn.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
+        mostrarBtn.setForeground(new java.awt.Color(255, 255, 255));
+        mostrarBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mostrarBtn.setText("Mostrar pila");
+        mostrarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mostrarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mostrarBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                mostrarBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                mostrarBtnMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout mostrarBcLayout = new javax.swing.GroupLayout(mostrarBc);
+        mostrarBc.setLayout(mostrarBcLayout);
+        mostrarBcLayout.setHorizontalGroup(
+            mostrarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(mostrarBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+        );
+        mostrarBcLayout.setVerticalGroup(
+            mostrarBcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(mostrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(158, Short.MAX_VALUE)
+                .addContainerGap(160, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(infoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(vaciarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(topeBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ingresarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(99, 99, 99)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(extraerBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tamanoBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(topeBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ingresarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(mostrarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(153, 153, 153))))
+                        .addGap(99, 99, 99)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(limpiarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(extraerBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buscarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(151, 151, 151))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,15 +291,15 @@ public class PanelPS extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ingresarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(extraerBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(topeBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tamanoBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(vaciarBc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(mostrarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(topeBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buscarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mostrarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(limpiarBc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -333,25 +333,121 @@ public class PanelPS extends javax.swing.JPanel {
         topeBtn.setForeground(Color.white);
     }//GEN-LAST:event_topeBtnMouseExited
 
-    private void tamanoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tamanoBtnMouseEntered
-        tamanoBc.setBackground(new Color(102,102,255));
-        tamanoBtn.setForeground(Color.black);
-    }//GEN-LAST:event_tamanoBtnMouseEntered
+    private void buscarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscarBtnMouseEntered
+        buscarBc.setBackground(new Color(102,102,255));
+        buscarBtn.setForeground(Color.black);
+    }//GEN-LAST:event_buscarBtnMouseEntered
 
-    private void tamanoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tamanoBtnMouseExited
-        tamanoBc.setBackground(new Color(51,51,255));
-        tamanoBtn.setForeground(Color.white);
-    }//GEN-LAST:event_tamanoBtnMouseExited
+    private void buscarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscarBtnMouseExited
+        buscarBc.setBackground(new Color(51,51,255));
+        buscarBtn.setForeground(Color.white);
+    }//GEN-LAST:event_buscarBtnMouseExited
 
-    private void vaciarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vaciarBtnMouseEntered
-        vaciarBc.setBackground(new Color(102,102,255));
-        vaciarBtn.setForeground(Color.black);
-    }//GEN-LAST:event_vaciarBtnMouseEntered
+    private void ingresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarBtnMouseClicked
+        try {
+            pila.push(Integer.parseInt(JOptionPane.showInputDialog(this,"Ingrese el dato")));
+            JOptionPane.showMessageDialog(this,"Se ingreso el dato con exito");
+        }catch(NumberFormatException e) {
+            return;
+        }
+    }//GEN-LAST:event_ingresarBtnMouseClicked
 
-    private void vaciarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vaciarBtnMouseExited
-        vaciarBc.setBackground(new Color(51,51,255));
-        vaciarBtn.setForeground(Color.white);
-    }//GEN-LAST:event_vaciarBtnMouseExited
+    private void extraerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_extraerBtnMouseClicked
+        if(pila.isEmpty()) {
+            JOptionPane.showMessageDialog(this,"La lista esta vacia");
+            
+            return;
+        }
+        int a = pila.pop();
+        JOptionPane.showMessageDialog(this,"Se extrajo el tope de la pila: " + a);
+    }//GEN-LAST:event_extraerBtnMouseClicked
+
+    private void topeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topeBtnMouseClicked
+        if(pila.isEmpty()) {
+            JOptionPane.showMessageDialog(this,"La lista esta vacia");
+            
+            return;
+        }
+        try {
+            int a = pila.peek();
+            JOptionPane.showMessageDialog(this,"El tope de la pila es: " + a);
+        }catch(NumberFormatException e) {
+            return;
+        }
+    }//GEN-LAST:event_topeBtnMouseClicked
+
+    private void buscarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscarBtnMouseClicked
+        if(pila.isEmpty()) {
+            JOptionPane.showMessageDialog(this,"La lista esta vacia");
+            
+            return;
+        }
+        try {
+            int a = Integer.parseInt(JOptionPane.showInputDialog(this,"Ingrese el elemento a buscar"));
+            int b = pila.search(a);
+            if(b != -1)
+                JOptionPane.showMessageDialog(this,"El elemento " + a + " esta en la pila");
+            else
+                JOptionPane.showMessageDialog(this,"El elemento " + a + " no esta en la pila");
+        }catch(NumberFormatException e) {
+            return;
+        }
+    }//GEN-LAST:event_buscarBtnMouseClicked
+
+    private void limpiarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarBtnMouseEntered
+        limpiarBc.setBackground(new Color(102,102,255));
+        limpiarBtn.setForeground(Color.black);
+    }//GEN-LAST:event_limpiarBtnMouseEntered
+
+    private void limpiarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarBtnMouseExited
+        limpiarBc.setBackground(new Color(51,51,255));
+        limpiarBtn.setForeground(Color.white);
+    }//GEN-LAST:event_limpiarBtnMouseExited
+
+    private void limpiarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarBtnMouseClicked
+        pila.clear();
+        JOptionPane.showMessageDialog(this,"Se ha limpiado la pila");
+    }//GEN-LAST:event_limpiarBtnMouseClicked
+
+    private void infoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseClicked
+        JOptionPane.showMessageDialog(this,"STACK (pila)\n"
+            + "   Métodos\n"
+            + "       Ingresar dato -> Ingresa un dato al Stack\n"
+            + "       Extraer dato -> Obtiene y elimina el tope de la pila (ultimo dato)\n"
+            + "       Mostrar dato -> Muestra el tope de la pila (ultimo dato)\n"
+            + "       Eliminar dato -> Elimina un elemento de una posición\n"
+            + "       Buscar dato -> Verefica si el dato dado esta en la pila\n"
+            + "       Limpiar lista -> Limpia el Stack\n"
+            + " **Este Stack es de tipo Integer por lo que solo admite números enteros,\n cualquier otro tipo de dato no será tomado en cuenta**\n");
+    }//GEN-LAST:event_infoBtnMouseClicked
+    
+    private void infoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseEntered
+        infoBc.setBackground(new Color(102,102,255));
+        infoBtn.setForeground(Color.black);
+    }//GEN-LAST:event_infoBtnMouseEntered
+
+    private void infoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseExited
+        infoBc.setBackground(new Color(51,51,255));
+        infoBtn.setForeground(Color.white);
+    }//GEN-LAST:event_infoBtnMouseExited
+
+    private void mostrarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mostrarBtnMouseClicked
+        if(pila.isEmpty()) {
+            JOptionPane.showMessageDialog(this,"La pila esta vacia");
+            return;
+        }
+        String lista = "";
+        String listaInvertida = "";
+        for(int dato : pila) {
+            lista += "  " + dato + "\n";
+        }
+        String[] cadena = lista.split(" ");
+        
+        for(int i = cadena.length - 1; i >= 0; i--) {
+                listaInvertida += "" + cadena[i];
+        }
+        JOptionPane.showMessageDialog(this,"Pila\n" + listaInvertida);
+    }//GEN-LAST:event_mostrarBtnMouseClicked
 
     private void mostrarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mostrarBtnMouseEntered
         mostrarBc.setBackground(new Color(102,102,255));
@@ -363,89 +459,21 @@ public class PanelPS extends javax.swing.JPanel {
         mostrarBtn.setForeground(Color.white);
     }//GEN-LAST:event_mostrarBtnMouseExited
 
-    private void ingresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarBtnMouseClicked
-        try {
-            int dato = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dato a ingresar"));
-            pila.ingresar(dato);
-            JOptionPane.showMessageDialog(this,"Se ingreso el dato con exito");
-        }catch(NumberFormatException e) {
-            return;
-        }
-    }//GEN-LAST:event_ingresarBtnMouseClicked
-
-    private void extraerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_extraerBtnMouseClicked
-        //if(pila.extraer() != null) {
-        try {
-            int datoExtraido = pila.extraer();
-            JOptionPane.showMessageDialog(this,"Se obtuvo el dato con exito");
-        }catch(NullPointerException e) {
-            JOptionPane.showMessageDialog(this,"La pila esta vacia");
-            return;
-        }
-        //}
-    }//GEN-LAST:event_extraerBtnMouseClicked
-
-    private void topeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topeBtnMouseClicked
-        if(pila.mostrarTope() != null) {
-            int tope = pila.mostrarTope();
-            JOptionPane.showMessageDialog(this,"El tope de la pila es: " + tope);
-        }else {
-            JOptionPane.showMessageDialog(this,"La pila esta vacia");
-        }
-        
-    }//GEN-LAST:event_topeBtnMouseClicked
-
-    private void tamanoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tamanoBtnMouseClicked
-        JOptionPane.showMessageDialog(this,"El tamaño de la pila es: " + pila.getTamano());
-    }//GEN-LAST:event_tamanoBtnMouseClicked
-
-    private void vaciarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vaciarBtnMouseClicked
-        pila.vaciarPila();
-        JOptionPane.showMessageDialog(this,"Se ha vaciado la pila");
-    }//GEN-LAST:event_vaciarBtnMouseClicked
-
-    private void mostrarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mostrarBtnMouseClicked
-        pila.mostrarPila();
-    }//GEN-LAST:event_mostrarBtnMouseClicked
-
-    private void infoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseClicked
-        JOptionPane.showMessageDialog(this,"PILA SIMPLE\n"
-            + "   Métodos\n"
-            + "       Ingresar dato -> Ingresa un dato a la pila\n"
-            + "       Extraer dato -> Extraer y eliminara el ultimo elemento de la pila\n"
-            + "       Mostrar tope -> Mostra en pantalla el ultimo elemento de la pila\n"
-            + "       Tamaño -> Muestra en pantalla cunatos elementos hay en la pila\n"
-            + "       Vaciar pila -> Limpia toda la pila\n"
-            + "       Mostrar pila -> Muestra en pantalla la pila\n"
-            + "       Pila vacia -> Muestra en pantalla si la pila esta vacia o no\n"
-            + " **Esta pila solo admite números enteros, cualquier otro tipo de dato no será tomado en cuenta**\n");
-    }//GEN-LAST:event_infoBtnMouseClicked
-
-    private void infoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseEntered
-        infoBc.setBackground(new Color(102,102,255));
-        infoBtn.setForeground(Color.black);
-    }//GEN-LAST:event_infoBtnMouseEntered
-
-    private void infoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBtnMouseExited
-        infoBc.setBackground(new Color(51,51,255));
-        infoBtn.setForeground(Color.white);
-    }//GEN-LAST:event_infoBtnMouseExited
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel buscarBc;
+    private javax.swing.JLabel buscarBtn;
     private javax.swing.JPanel extraerBc;
     private javax.swing.JLabel extraerBtn;
     private javax.swing.JPanel infoBc;
     private javax.swing.JLabel infoBtn;
     private javax.swing.JPanel ingresarBc;
     private javax.swing.JLabel ingresarBtn;
+    private javax.swing.JPanel limpiarBc;
+    private javax.swing.JLabel limpiarBtn;
     private javax.swing.JPanel mostrarBc;
     private javax.swing.JLabel mostrarBtn;
-    private javax.swing.JPanel tamanoBc;
-    private javax.swing.JLabel tamanoBtn;
     private javax.swing.JPanel topeBc;
     private javax.swing.JLabel topeBtn;
-    private javax.swing.JPanel vaciarBc;
-    private javax.swing.JLabel vaciarBtn;
     // End of variables declaration//GEN-END:variables
 }

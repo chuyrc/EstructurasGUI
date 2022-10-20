@@ -4,6 +4,8 @@
     Extraer elemento
     Mostrar elementos
     Verificar si la cola esta vacia
+ 
+    https://github.com/chuyrc/EstructurasGUI.git
 */
 package estructuras;
 import javax.swing.JOptionPane;
@@ -84,6 +86,11 @@ public class Cola {
         }
     }
 
+    public void vaciarCola() {
+        primero = null;
+        ultimo = null;
+    }
+    
     //  Método para saber si la cola esta vacia
     public boolean colaVacia() {
         return primero == null;
